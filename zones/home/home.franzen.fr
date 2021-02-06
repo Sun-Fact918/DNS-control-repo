@@ -1,0 +1,16 @@
+$TTL 3600	; 60 minutes
+home.franzen.fr.		IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111105 ; serial
+				120       ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				3600     ; expire (60 minutes)
+				120        ; minimum (2 minutes)
+				)
+
+;; NS Records
+home.franzen.fr.		IN NS	dns.int.franzen.fr.
+
+;; HOST Records
+nascar					IN CNAME	nascar.svc.home.franzen.fr.
+pi-hole					IN CNAME	pi.svc.home.franzen.fr.
+entreprise				IN CNAME	entreprise-eth1-00.mgmt.home.franzen.fr.

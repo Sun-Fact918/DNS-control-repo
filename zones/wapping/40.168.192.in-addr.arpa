@@ -1,0 +1,28 @@
+$ORIGIN .
+$TTL 120	; 2 minutes
+40.168.192.in-addr.arpa	IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111161 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				600        ; expire (10 minutes)
+				120        ; minimum (2 minutes)
+				)
+			NS	dns.int.franzen.fr.
+$ORIGIN 40.168.192.in-addr.arpa.
+$TTL 43200	; 12 hours
+10			PTR	Galaxy-S7.data.wapping.franzen.fr.
+14			PTR	GregoiresiPhone.data.wapping.franzen.fr.
+17			PTR	iPhone.data.wapping.franzen.fr.
+$TTL 120	; 2 minutes
+254			PTR	bifrost-eth1-40.data.wapping.franzen.fr.
+$TTL 43200	; 12 hours
+35			PTR	MIPAD-MiPad.data.wapping.franzen.fr.
+36			PTR	GalaxyWatchActive2-BBBD.data.wapping.franzen.fr.
+37			PTR	Galaxy-S20.data.wapping.franzen.fr.
+38			PTR	Alan-Laptop.data.wapping.franzen.fr.
+40			PTR	E826P0L633RT3LC.data.wapping.franzen.fr.
+54			PTR	RL-phone.data.wapping.franzen.fr.
+57			PTR	E826P0L633RT3LC.data.wapping.franzen.fr.
+58			PTR	Galaxy-S20.data.wapping.franzen.fr.
+59			PTR	GalaxyWatchActive2-BBBD.data.wapping.franzen.fr.
+60			PTR	Alan-Laptop.data.wapping.franzen.fr.

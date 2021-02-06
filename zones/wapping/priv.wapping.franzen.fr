@@ -1,0 +1,23 @@
+$ORIGIN .
+$TTL 120	; 2 minutes
+priv.wapping.franzen.fr	IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111108 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				600        ; expire (10 minutes)
+				120        ; minimum (2 minutes)
+				)
+			NS	dns.int.franzen.fr.
+$ORIGIN priv.wapping.franzen.fr.
+bifrost-eth1-45		A	192.168.45.254
+$TTL 43200	; 12 hours
+DESKTOP-FQ79B78		A	192.168.45.5
+			TXT	"3190f1ffd724fcf93f5fdb1507f9dd414b"
+GregoiresiPhone		A	192.168.45.8
+			TXT	"313a4de467a7556fe125d24b4a7794a7e8"
+Haruhi			A	192.168.45.4
+			TXT	"313e141bab5c8b73b065e41aa976588a5b"
+Macalister		A	192.168.45.6
+			TXT	"316b234c9949f6d85bc9d6939b373a482c"
+OnePlus6		A	192.168.45.3
+			TXT	"31e5df302749dc8ab6cb8a3c095ce1eb8e"

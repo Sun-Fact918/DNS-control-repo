@@ -1,0 +1,51 @@
+$ORIGIN .
+$TTL 120	; 2 minutes
+data-wifi.home.franzen.fr IN SOA dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111215 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				600        ; expire (10 minutes)
+				120        ; minimum (2 minutes)
+				)
+			NS	dns.int.franzen.fr.
+$ORIGIN data-wifi.home.franzen.fr.
+$TTL 3945000	; 6 weeks 3 days 15 hours 50 minutes
+android-237490d51c3bedbb A	192.168.50.17
+			TXT	"00a8f0dc599fb35f9649396e49efd38ab4"
+android-b9acf79c056ca17c A	192.168.50.23
+			TXT	"311098d364160f84e1277be87c458ad270"
+android-d8d9058394015319 A	192.168.50.27
+			TXT	"31fc74b08950424a9e2bae96912ad24d8a"
+android-f811fd7036863680 A	192.168.50.4
+			TXT	"31bd6809b4836d6bac35f735875fedd554"
+Arek			A	192.168.50.21
+			TXT	"318765f966a28425697c5ef7c8eb5c6347"
+DESKTOP-0GUO4C2		A	192.168.50.26
+			TXT	"318c17819241acf9f1fbd47e17f68461e6"
+DESKTOP-61G9FF5		A	192.168.50.22
+			TXT	"31c09aa88c7939928472e212618d4aacc0"
+DESKTOP-DVKQIVM		A	192.168.50.12
+			TXT	"3196c64e93c030323644bf50bca6279f2c"
+DESKTOP-U8KJCDD		A	192.168.50.24
+			TXT	"31864a62119b6ddd9672b41e33027a15df"
+$TTL 120	; 2 minutes
+entreprise-eth1-50	A	192.168.50.254
+$TTL 3945000	; 6 weeks 3 days 15 hours 50 minutes
+Hall-9002		A	192.168.50.20
+			TXT	"319de48135a3c899eafcd1010ee7cf1ed8"
+$TTL 43200	; 12 hours
+Haruhi			A	192.168.50.14
+			TXT	"313e141bab5c8b73b065e41aa976588a5b"
+Macalister		A	192.168.50.1
+			TXT	"316b234c9949f6d85bc9d6939b373a482c"
+$TTL 3945000	; 6 weeks 3 days 15 hours 50 minutes
+Marikany		A	192.168.50.19
+			TXT	"3182aa3b60b351ef33982ed2e695e9bbe1"
+Nono			A	192.168.50.16
+			TXT	"31e5df302749dc8ab6cb8a3c095ce1eb8e"
+$TTL 43200	; 12 hours
+OnePlus6		A	192.168.50.3
+			TXT	"315bf0b66e4ecad9c304b575e5cf9e61a5"
+$TTL 3888000	; 6 weeks 3 days
+Sohos-iPhone		A	192.168.50.15
+			TXT	"31aba57f185efaaa99b3dcb8f7d351070e"

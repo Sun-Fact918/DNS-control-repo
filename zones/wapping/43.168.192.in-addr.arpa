@@ -1,0 +1,18 @@
+$ORIGIN .
+$TTL 120	; 2 minutes
+43.168.192.in-addr.arpa	IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111122 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				600        ; expire (10 minutes)
+				120        ; minimum (2 minutes)
+				)
+			NS	dns.int.franzen.fr.
+$ORIGIN 43.168.192.in-addr.arpa.
+$TTL 43200	; 12 hours
+129			PTR	LGwebOSTV.iot.wapping.franzen.fr.
+2			PTR	Chromecast.iot.wapping.franzen.fr.
+$TTL 120	; 2 minutes
+254			PTR	bifrost-eth1-43.iot.wapping.franzen.fr.
+$TTL 43200	; 12 hours
+3			PTR	amazon-2dc6eec46.iot.wapping.franzen.fr.

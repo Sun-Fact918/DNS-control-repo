@@ -1,0 +1,23 @@
+$ORIGIN .
+$TTL 120	; 2 minutes
+mgmt.wapping.franzen.fr	IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111112 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				600        ; expire (10 minutes)
+				120        ; minimum (2 minutes)
+				)
+			NS	dns.int.franzen.fr.
+$ORIGIN mgmt.wapping.franzen.fr.
+$TTL 43200	; 12 hours
+AP-BedroomGreg		A	192.168.42.10
+			TXT	"31d011fb5ca29e508db54193ca5f9b312d"
+AP-LivingRoom		A	192.168.42.12
+			TXT	"31a1dfa8f613dfe86b7d83f5de3e819e79"
+$TTL 120	; 2 minutes
+bifrost-eth1-00		A	192.168.42.254
+$TTL 43200	; 12 hours
+Client-GregBedroom	A	192.168.42.11
+			TXT	"310a1c9c13398df1431482a36712241ebe"
+Core-LivingRoom		A	192.168.42.22
+			TXT	"31427685656652a661cac0c77a98681a88"

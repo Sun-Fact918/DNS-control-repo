@@ -1,0 +1,23 @@
+$ORIGIN .
+$TTL 3600	; 1 hour
+49.168.192.in-addr.arpa	IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111177 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				3600       ; expire (1 hour)
+				120        ; minimum (2 minutes)
+				)
+			NS	dns.int.franzen.fr.
+$ORIGIN 49.168.192.in-addr.arpa.
+$TTL 3945000	; 6 weeks 3 days 15 hours 50 minutes
+1			PTR	Marikany.data.home.franzen.fr.
+$TTL 3888000	; 6 weeks 3 days
+2			PTR	Macalister.data.home.franzen.fr.
+$TTL 3600	; 1 hour
+254			PTR	entreprise-eth1-49.data.home.franzen.fr.
+$TTL 3945000	; 6 weeks 3 days 15 hours 50 minutes
+3			PTR	Haruhi.data.home.franzen.fr.
+4			PTR	HALL-9000.data.home.franzen.fr.
+5			PTR	Arek.data.home.franzen.fr.
+6			PTR	DESKTOP-DVKQIVM.data.home.franzen.fr.
+7			PTR	DESKTOP-JLQIKK8.data.home.franzen.fr.

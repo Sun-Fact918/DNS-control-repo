@@ -1,0 +1,15 @@
+$TTL 120	; 2 minutes
+wapping.franzen.fr.		IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111103 ; serial
+				120       ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				600     ; expire (5 minutes)
+				120        ; minimum (2 minutes)
+				)
+
+;; NS Records
+wapping.franzen.fr.		IN NS	dns.int.franzen.fr.
+
+;; HOST Records
+pi-hole				IN CNAME	pi.svc.wapping.franzen.fr.
+bifrost				IN CNAME	bifrost-eth1-00.mgmt.wapping.franzen.fr.

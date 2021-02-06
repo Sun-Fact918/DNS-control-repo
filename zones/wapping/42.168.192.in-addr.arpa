@@ -1,0 +1,18 @@
+$ORIGIN .
+$TTL 120	; 2 minutes
+42.168.192.in-addr.arpa	IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111108 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				300        ; expire (5 minutes)
+				120        ; minimum (2 minutes)
+				)
+			NS	dns.int.franzen.fr.
+$ORIGIN 42.168.192.in-addr.arpa.
+$TTL 43200	; 12 hours
+10			PTR	AP-BedroomGreg.mgmt.wapping.franzen.fr.
+11			PTR	Client-GregBedroom.mgmt.wapping.franzen.fr.
+12			PTR	AP-LivingRoom.mgmt.wapping.franzen.fr.
+22			PTR	Core-LivingRoom.mgmt.wapping.franzen.fr.
+$TTL 120	; 2 minutes
+254			PTR	bifrost-eth1-00.mgmt.wapping.franzen.fr.

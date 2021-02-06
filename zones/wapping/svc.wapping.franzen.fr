@@ -1,0 +1,15 @@
+$TTL 120	; 2 minutes
+svc.wapping.franzen.fr.		IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111102 ; serial
+				120       ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				600     ; expire (5 minutes)
+				120        ; minimum (2 minutes)
+				)
+
+;; NS Records
+svc.wapping.franzen.fr.		IN NS	dns.int.franzen.fr.
+
+;; HOST Records
+pi				IN A	192.168.41.200
+bifrost-eth1-41			IN A	192.168.41.254

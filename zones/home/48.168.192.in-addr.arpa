@@ -1,0 +1,23 @@
+$ORIGIN .
+$TTL 3600	; 1 hour
+48.168.192.in-addr.arpa	IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111296 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				3600       ; expire (1 hour)
+				120        ; minimum (2 minutes)
+				)
+			NS	dns.int.franzen.fr.
+$ORIGIN 48.168.192.in-addr.arpa.
+$TTL 3945000	; 6 weeks 3 days 15 hours 50 minutes
+1			PTR	Buanderie-Core.mgmt.home.franzen.fr.
+12			PTR	AP-Bureau.mgmt.home.franzen.fr.
+2			PTR	AP-ChambreGreg.mgmt.home.franzen.fr.
+$TTL 3600	; 1 hour
+254			PTR	entreprise-eth1-00.mgmt.home.franzen.fr.
+$TTL 3945000	; 6 weeks 3 days 15 hours 50 minutes
+37			PTR	ChambreGreg.mgmt.home.franzen.fr.
+38			PTR	ChambreTheo.mgmt.home.franzen.fr.
+39			PTR	Salon-TV.mgmt.home.franzen.fr.
+40			PTR	Bureau.mgmt.home.franzen.fr.
+41			PTR	DESKTOP-JLQIKK8.mgmt.home.franzen.fr.

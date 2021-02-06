@@ -1,0 +1,25 @@
+tatayoyo.franzen.fr.	300	IN	SOA	dns1.franzen.fr. postmaster.franzen.fr. 2015051412 3600 900 604800 300
+tatayoyo.franzen.fr.	300	IN	RRSIG	SOA 8 3 300 20170929154732 20170929134731 52395 tatayoyo.franzen.fr. o3Y8Orr1UeuSk233Qx5eAfqnM1o5Ztx/6Emo9uEW8suGfuKvJ1Bg0DyLQgCMvi8GWHeEKR6Vcxh2TD/Evr/uikyKXt6NfxKPhUZJHkmGRpu2p+HGIjjvvaN6w8rYyMlr6EUimbMqkOK86tfd1T/Wp/7DPnrnIManFaWZ9Y2vE5I=
+tatayoyo.franzen.fr.	300	IN	DNSKEY	257 3 8 AwEAAbTiAKZRAWrYrhx/6GKtZr5H5TvnbzIxGgWw4Lr7ZbQONZFtWsUBp9uot8ZYbOofWtZg5vtOq1uM0gSSNR5QburiuWvYrCGT005PLGDwBIdRBk/Ynt9iyJhZj94WpgmJL4OAFvWvER9RZQackHeGJ25MhygerA6rIFScF7h5flwa6btOGv7JVlkILhcA0Q98WcFZeJM/4o+/SJsBX2IpMq93UUBJxHXrnFuy8Xse16hcEx3NBrLktNFe6Iti5ArXgVjjiGOIsHlNoYDJupl4W0Le+k7b4jFCgbIkxi/J3iGwkykVG4VOSS9ToqPtdLp5UbMAFaqRDogiADre5/xOVeM= ;{id = 51301 (ksk), size = 2048b}
+tatayoyo.franzen.fr.	300	IN	DNSKEY	256 3 8 AwEAAb2NQVwvJfKvoTNGv4Qx5V5h2xIABTWwds/Ps45yKQ4NgCi67NHk7Alboh63NLbuQZwlBRC2MJ7QwnyDrAM7FXDr0i0/PolZ0cRv7Acdjcalla/YzyH258WTwec9MxVvt78H1WsYnMN4W9sUUy+cmCe4+gslQQBm92rY0+plXTdJ ;{id = 24036 (zsk), size = 1024b}
+tatayoyo.franzen.fr.	300	IN	DNSKEY	256 3 8 AwEAAdmvTz/1WmBdKi9AvlpDZ7w3zyeMAlHrcxI7BoNPgogtHGig0FAvRkoErG7AmQSB9A8M8jPK1UCeD7qD8P3fh8tauGkmZyVpLcssCuChVbOTAjtfOAH+dbiptTutdtcYzptuV00UaOXXJMO2j3KKvyHSELSBp8STWYNlp4p/vWCp ;{id = 52395 (zsk), size = 1024b}
+tatayoyo.franzen.fr.	300	IN	RRSIG	DNSKEY 8 3 300 20170929154701 20170929134731 51301 tatayoyo.franzen.fr. FCrUqB7U134d+T7sDnRy5jJ0qxFIqOi9Bwq2sPvU2q912SeuDlBvmBdWyTutvci3TIJ3fsMY2GVA3NJo33LiWfyeWPLzu6i7nELgBUy85KF02z7WA62fTa/2j8zuNke9sruUph/8MFF3YAfkyrXl/WdvCUuO60bYWYyLwA+l16lsBNgZIYC/AVvK7orfDlAZ+1eZQgW6mLuFPePYDAzkHNb0QTuZpUKySHJkXYjjO6cUblSrMKQuHwFM478yRw8y3xYxP/RY00tFcL4Uh/5YsAVjg70gDmDKYRZkoxmmqZbw/GoHLRlQoNQStvheHIogS4Eust42FxpRurLl4NVP/A==
+tatayoyo.franzen.fr.	120	IN	NS	dns1.franzen.fr.
+tatayoyo.franzen.fr.	120	IN	NS	dns2.franzen.fr.
+tatayoyo.franzen.fr.	120	IN	RRSIG	NS 8 3 120 20170929152827 20170929132731 52395 tatayoyo.franzen.fr. EhoIU5ynPRGgTJeoL8GvM5R9hL5sNC57IBOAK0/fKwV4y1xe5Wul4ENl+3Cu7JrD7ixZueQ1vlH8WMFzWm8E52uCHrj+zUcvoHje7KXZhmIzFmVF7jylLkwJJWec214BeirSt9GqmETu6B60q3xBWmT6FgD46rdJdAvvOvBKW2Y=
+tatayoyo.franzen.fr.	120	IN	A	94.23.147.128
+tatayoyo.franzen.fr.	120	IN	RRSIG	A 8 3 120 20170929152111 20170929132131 24036 tatayoyo.franzen.fr. Q2CDoS8ktVYyiPgx+YbwC2FXs4zmMjQZD3ttnoIm3MBeqcNvzJ9Je0iUhgIDtoKQ6uP5099kV8dOaKO1EDSsE//SwBbYYRVTA+DCkuwN9dl0PdvwvWRhtEbRdMQkLCORVZSKqy08bQkP7CViSU+EpB0IezgX0AgTmHHZKQT8P3g=
+tatayoyo.franzen.fr.	300	IN	NSEC	db.tatayoyo.franzen.fr. A NS SOA RRSIG NSEC DNSKEY 
+tatayoyo.franzen.fr.	300	IN	RRSIG	NSEC 8 3 300 20170929152141 20170929132131 24036 tatayoyo.franzen.fr. R3iwjbVc3aFIfRcui9haqEO/S8Hd4P8bs2Bo4xDH08byrYYeNKEAu1PiGsCUOSTqhZhkDA8ew2aMOAKYUPd2FFpAvSDi7wX+eE56IFvX/+g69PfEyc3D3nIgoLt4uKTPz8dY0RENzW/mp9pQqoKG7CBXtScn4darrmrrTLFikxM=
+db.tatayoyo.franzen.fr.	120	IN	CNAME	tatayoyo.franzen.fr.
+db.tatayoyo.franzen.fr.	120	IN	RRSIG	CNAME 8 4 120 20170929153747 20170929133731 52395 tatayoyo.franzen.fr. Lo10kTIay4qd/GKOJTfVdCLlbE9gRi1Tm/eTvej2tZMd104tO5ntrI93EAjRWasesocTuDhdvX9aFL3beUFmtcCXUVTBGhmD8lhC3hEPhqLIzzxJxNVKoNNQG6t2TtCjKOj84WD3WbOM1Tix3TKfAc5vntR8nX9WRRK2E/mHGbI=
+db.tatayoyo.franzen.fr.	300	IN	NSEC	ddl.tatayoyo.franzen.fr. CNAME RRSIG NSEC 
+db.tatayoyo.franzen.fr.	300	IN	RRSIG	NSEC 8 4 300 20170929152743 20170929132731 52395 tatayoyo.franzen.fr. h8hqgRJaXRPSVcQDEp3gKLLbuQmu8TNrpUeiTzRbHoQ2kAHfaohi53A+70YPeCBI+cwlHGCEQ+EJeMYq6arCvcTNUyaaAElA/3GX3VwLHWZw4Wm/gm3CXQ4GuSktu1N9IpTq3yw5qcCdZvtKyWveOOZxyQugb0/2VDzzTOflHe8=
+ddl.tatayoyo.franzen.fr.	120	IN	CNAME	tatayoyo.franzen.fr.
+ddl.tatayoyo.franzen.fr.	120	IN	RRSIG	CNAME 8 4 120 20170929152140 20170929132131 24036 tatayoyo.franzen.fr. rMzUHulq/d+Yca13Skk5xAXUbsirlKkcZRAiO/goKQW9jBlAFOulkL7qyR6TGYXKyqU8JPIDiZqYFM3iYM7QsnMLd/6qfEqWlmD9XTPBchLxSsK+ahmEaJVhvc0YsoWbhpPDA25T11LCdxi0XZoZaTqqR5/AZvINnWf8+NNtnFg=
+ddl.tatayoyo.franzen.fr.	300	IN	NSEC	transmission.tatayoyo.franzen.fr. CNAME RRSIG NSEC 
+ddl.tatayoyo.franzen.fr.	300	IN	RRSIG	NSEC 8 4 300 20170929152113 20170929132131 24036 tatayoyo.franzen.fr. gtQwsPcqVOq2yCrXeKOBZwUaWoX/exm6UnHkroBs6XmqvRp8kr0V6VJYaWmlWNHf+gptcDTgcPL/mX5JoTPPtwQQwSdwfxq0YY47t2t1U7Tls5jaLuOZsqQ+QYjZcs6amQsG+XkyLKl0RKHMsH3pYJCHPPjjBx2QSK54ma/Vlvc=
+transmission.tatayoyo.franzen.fr.	120	IN	CNAME	tatayoyo.franzen.fr.
+transmission.tatayoyo.franzen.fr.	120	IN	RRSIG	CNAME 8 4 120 20170929154739 20170929134731 52395 tatayoyo.franzen.fr. CAVNI7PYFvtMT3xmNuY13rt1vt9a3/E+MPZl4ZOV6gll3v7STqFBEAXpx0kYFzor6gAIAssCJqb6uson8u2aszc87LBMazSMCAMs7BXYtqu4LwFpiajQ5S4IWEw0nXbH6cSNDT2p/FQtbhlyXhM5xuIPZQ6KzADU3rdZ1K+TZG0=
+transmission.tatayoyo.franzen.fr.	300	IN	NSEC	tatayoyo.franzen.fr. CNAME RRSIG NSEC 
+transmission.tatayoyo.franzen.fr.	300	IN	RRSIG	NSEC 8 4 300 20170929153722 20170929133731 52395 tatayoyo.franzen.fr. jkyWYjChF5OtTqwvGS51ojNwtGkgq9xDqqLkbVKIoDFgmbc9ClezB+rheM/XYHiiCzGTSE37sAFpEu/VJAToY/a6ewilMsommNj4OTvV0vqrSQB5Tkg0K4b0NZnA7/bdaJD3QfWlHnBDl4CgG37QSEPMHEbzxQir4mXUE+WEk4s=

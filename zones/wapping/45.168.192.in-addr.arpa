@@ -1,0 +1,18 @@
+$ORIGIN .
+$TTL 120	; 2 minutes
+45.168.192.in-addr.arpa	IN SOA	dns.int.franzen.fr. postmaster.franzen.fr. (
+				2020111123 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				600        ; expire (10 minutes)
+				120        ; minimum (2 minutes)
+				)
+			NS	dns.int.franzen.fr.
+$ORIGIN 45.168.192.in-addr.arpa.
+254			PTR	bifrost-eth1-45.iot.wapping.franzen.fr.
+$TTL 43200	; 12 hours
+3			PTR	OnePlus6.priv.wapping.franzen.fr.
+4			PTR	Haruhi.priv.wapping.franzen.fr.
+5			PTR	DESKTOP-FQ79B78.priv.wapping.franzen.fr.
+6			PTR	Macalister.priv.wapping.franzen.fr.
+8			PTR	GregoiresiPhone.priv.wapping.franzen.fr.
