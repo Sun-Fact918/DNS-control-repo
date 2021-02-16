@@ -1,15 +1,15 @@
 ;46.168.192.in-addr.arpa.
-$TTL 120	; 2 minutes
-@	IN SOA	dns.franzen.fr. postmaster.franzen.fr. (
-				2021020900 ; serial
-				120        ; refresh (2 minutes)
-				120        ; retry (2 minutes)
-				600        ; expire (10 minutes)
-				120        ; minimum (2 minutes)
-				)
-				
-;; NS Records
-46.168.192.in-addr.arpa.	IN NS	dns.franzen.fr.
+$ORIGIN 46.168.192.in-addr.arpa.
+@           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 
-;; HOST Records
-254			PTR	bifrost-eth1-46.priv.wapping.franzen.fr.
+                2021020900      ; Serial  - YYYYMMDDNN
+                3600            ; Refresh - 1h
+                1800            ; Retry   - 30mn
+                604800          ; Expire  - 1 week
+                900 )           ; Negative Cache - 5mn
+
+; Authoritative DNS Servers
+46.168.192.in-addr.arpa.        IN NS	dns.franzen.fr.
+
+; Domain Records
+254			                    PTR 	bifrost-eth1-46.priv.wapping.franzen.fr.
