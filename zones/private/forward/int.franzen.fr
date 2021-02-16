@@ -1,17 +1,18 @@
 ;int.franzen.fr - internal view
-$TTL 120
-@ IN SOA dns.franzen.fr. postmaster.franzen.fr. (
-        2021020900; SERIAL
-        3600; REFRESH
-        15M; RETRY
-        1W; EXPIRE
-        600 ) ; Negative Cache TTL
+$ORIGIN int.franzen.fr.
+@           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 
-; Serveur de nom ayant autorité sur le domaine
-int.franzen.fr. 	IN  NS      dns.franzen.fr.
+                2021020900      ; Serial  - YYYYMMDDNN
+                3600            ; Refresh - 1h
+                1800            ; Retry   - 30mn
+                604800          ; Expire  - 1 week
+                900 )           ; Negative Cache - 5mn
 
-;;; Domain HOST
-;; IPv4
+; Authoritative DNS Servers
+int.franzen.fr.     IN  NS      dns.franzen.fr.
+
+; Domain Records
+;; IP v4 (Host)
 cerberus-vmbr1		IN A	172.16.0.254
 cerberus-vmbr2		IN A	172.16.1.254
 dns					IN A	172.16.1.251
@@ -23,7 +24,7 @@ pi-hole				IN A	172.16.0.250
 syslog-01			IN A	172.16.1.150
 unifi				IN A	172.16.1.210
 
-;;; IPv6
+;; IP v6 (Host)
 cerberus-vmbr1		IN AAAA 2001:470:1f13:24:: 
 cerberus-vmbr2		IN AAAA	2001:470:c80d:1:: 
 dns					IN AAAA	2001:470:c80d:1::251

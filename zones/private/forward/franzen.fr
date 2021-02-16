@@ -1,62 +1,56 @@
 ;franzen.fr - internal view
-$TTL 120
-@ IN SOA dns1.franzen.fr. postmaster.franzen.fr. (
-        2021020900; SERIAL
-        3600; REFRESH
-        15M; RETRY
-        1W; EXPIRE
-        600 ) ; Negative Cache TTL
+$ORIGIN franzen.fr.
+@           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 
-; Serveur de nom ayant autorité sur le domaine
+                2021020900      ; Serial  - YYYYMMDDNN
+                3600            ; Refresh - 1h
+                1800            ; Retry   - 30mn
+                604800          ; Expire  - 1 week
+                900 )           ; Negative Cache - 5mn
+
+; Authoritative DNS Servers
 franzen.fr. IN  NS      		dns.franzen.fr.
 
 
-; Secu Mail : SPF, DKIM, DMARC - inutile pour une vue interne ?
-;franzen.fr.            IN SPF  "v=spf1 mx:franzen.fr ip4:178.33.249.89 ip6:2001:470:1f13:24::60 -all"
+; Mail stuff : SPF, DKIM, DMARC - inutile pour une vue interne ?
 franzen.fr.             		IN TXT "v=spf1 mx:franzen.fr ip4:178.33.249.89 ip6:2001:470:1f13:24::60 ip4:37.59.205.231 ip6:2001:470:1f13:24::202 ~all"
 mail._domainkey         		IN TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDFYr1U9gBN/wpjkgj+kKXvzujuQVyTZ8LomC2kicp1q4rkrlRvc0GSf1HzFWr4pPJuNdJNFODBMHs4j0Xiovk6qtoUL0Bj7TZnsA0YYOS49Vcwhu8SE4WLdlMHDlVvuvmGtOPkHvEx7n8rHmhfILnwyEegWfr7OrLrN3iWQgJ3QIDAQAB"
 _dmarc.franzen.fr.      		IN TXT "v=DMARC1; p=none; sp=none; pct=5; rua=mailto:dmarc@franzen.fr"
 _adsp._domainkey.franzen.fr.    IN TXT "dkim=discardable"
 
-;;; Noeuds du domaine - 
-; Garde les IPs publique pour les serveurs sys
+; Domain Records
 ;; IP v4 (Host)
 cerberus         IN A           172.16.3.254
-chtuko           IN A           188.165.228.70
-cthuko           IN A           5.135.131.19
-relay            IN A           172.16.0.202
-web              IN A           172.16.0.20
-
-;; Service (nom fonction)
+chtuko           IN A           188.165.228.70      ; keep public IP for Hypervisor
+cthuko           IN A           5.135.131.19        ; keep public IP for Hypervisor
 dns	             IN A           172.16.0.5
 dns1			 IN A			172.16.0.50
 dns2			 IN A			172.16.0.51
+relay            IN A           172.16.0.202
 smtp             IN A           172.16.0.60
+web              IN A           172.16.0.20
 
 ;; IP v6 (Host)
-cerberus        IN AAAA         2001:470:c80d:3::0
+cerberus       IN AAAA         2001:470:c80d:3::0
 chtuko          IN AAAA         2001:41d0:2:af46::0
-;cthuko         IN AAAA          TBD
-relay           IN AAAA         2001:470:1f13:24::202
-web             IN AAAA         2001:470:1f13:24::20
-;
-;; Service (nom fonction)
+;cthuko        IN AAAA          TBD
 dns	           IN AAAA         2001:470:1f13:24::5
 dns1		   IN AAAA		   2001:470:1f13:24::50
 dns2           IN AAAA         2001:470:1f13:24::51
+relay          IN AAAA         2001:470:1f13:24::202
 smtp           IN AAAA         2001:470:1f13:24::60
+web            IN AAAA         2001:470:1f13:24::20
 
-; Champ email - inutile pour une vue interne ?
+; Mail Records - inutile pour une vue interne ?
 franzen.fr.  IN MX 10  smtp.franzen.fr.
 
 ; Aliases - CNAME
-;;; Mail
+;; Mail
 imap            IN CNAME        smtp
 
-;;; web stuff
+;; web stuff
 autoconfig      IN CNAME        web
 db              IN CNAME        web
 pass            IN CNAME        web
 webmail         IN CNAME        web
 www             IN CNAME        web
-

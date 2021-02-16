@@ -1,19 +1,16 @@
 ;wapping.franzen.fr - internal view
-$TTL 120	; 2 minutes
-@	IN SOA	dns.franzen.fr. postmaster.franzen.fr. (
-        2021020900; SERIAL
-        3600; REFRESH
-        15M; RETRY
-        1W; EXPIRE
-        600 ) ; Negative Cache TTL
+$ORIGIN wapping.franzen.fr.
+@           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
+
+                2021020900      ; Serial  - YYYYMMDDNN
+                3600            ; Refresh - 1h
+                1800            ; Retry   - 30mn
+                604800          ; Expire  - 1 week
+                900 )           ; Negative Cache - 5mn
 		
-; Serveur de nom ayant autorité sur le domaine		
-wapping.franzen.fr.		IN 	NS		dns.franzen.fr.
+; Authoritative DNS Servers
+wapping.franzen.fr.     IN 	NS		dns.franzen.fr.
 
-;;; Noeuds du domaine - 
-; Garde les IPs publique pour les serveurs sys
-;; IP v4 (Host)
-
-;; HOST Records
-bifrost					IN CNAME	bifrost-eth1-00.mgmt.wapping.franzen.fr.
-pi-hole					IN CNAME	pi.svc.wapping.franzen.fr.
+; Domain Records
+bifrost                 IN CNAME	bifrost-eth1-00.mgmt.wapping.franzen.fr.
+pi-hole                 IN CNAME	pi.svc.wapping.franzen.fr.
