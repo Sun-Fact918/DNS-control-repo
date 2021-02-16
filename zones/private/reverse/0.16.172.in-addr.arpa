@@ -1,0 +1,23 @@
+;0.16.172.in-addr.arpa.
+$TTL 120	; 2 minutes
+@	IN SOA	dns.franzen.fr. postmaster.franzen.fr. (
+				2021020900 ; SERIAL
+				3600       ; REFRESH (1 hour)                        
+				15M        ; RETRY (15 minutes)                      
+				1W         ; EXPIRE (1 week)                         
+				600        ; minimum / Negative cache TTL (5 minutes)
+				)
+
+;; NS Records
+0.16.172.in-addr.arpa.		IN NS	dns.franzen.fr.
+
+;; HOST Records
+5				PTR	dns.franzen.fr.
+10				PTR	index.int.franzen.fr.
+20				PTR	web.franzen.fr.
+50				PTR	dns1.franzen.fr.
+51				PTR	dns2.franzen.fr.
+60				PTR	smtp.franzen.fr.
+202				PTR	relay.franzen.fr.
+250				PTR	pi-hole.int.franzen.fr.
+254				PTR	cerberus-vmbr1.int.franzen.fr.

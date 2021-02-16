@@ -1,0 +1,15 @@
+$ORIGIN 53.168.192.in-addr.arpa.
+$TTL 120	; 2 minutes
+@	IN SOA	dns.franzen.fr. postmaster.franzen.fr. (
+				2021020900 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				3600        ; expire (60 minutes)
+				120        ; minimum (2 minutes)
+				)
+				
+;; NS Records
+53.168.192.in-addr.arpa. 		IN NS	dns.franzen.fr.
+
+;; HOST Records
+254			PTR	entreprise-eth1-53.iot-wifi.home.franzen.fr.

@@ -1,0 +1,15 @@
+;43.168.192.in-addr.arpa. 
+$TTL 120	; 2 minutes
+@	IN SOA	dns.franzen.fr. postmaster.franzen.fr. (
+				2021020900 ; serial
+				120        ; refresh (2 minutes)
+				120        ; retry (2 minutes)
+				600        ; expire (10 minutes)
+				120        ; minimum (2 minutes)
+				)
+				
+;; NS Records
+43.168.192.in-addr.arpa.	IN NS	dns.franzen.fr.
+
+;; HOST Records
+254			PTR	bifrost-eth1-43.data-wifi.wapping.franzen.fr.

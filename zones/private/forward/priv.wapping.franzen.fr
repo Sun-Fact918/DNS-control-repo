@@ -1,0 +1,16 @@
+;priv.wapping.franzen.fr - internal view
+$TTL 120
+@ IN SOA dns.franzen.fr. postmaster.franzen.fr. (
+        2021020900; SERIAL
+        3600; REFRESH
+        15M; RETRY
+        1W; EXPIRE
+        600 ) ; Negative Cache TTL
+
+; Serveur de nom ayant autorité sur le domaine
+priv.wapping.franzen.fr. 	IN  NS      dns.franzen.fr.
+
+;;; Noeuds du domaine - 
+; Garde les IPs publique pour les serveurs sys
+;; IP v4 (Host)
+bifrost-eth1-46				IN A		192.168.46.254

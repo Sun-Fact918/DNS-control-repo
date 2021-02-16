@@ -1,0 +1,16 @@
+;data-wifi.home.franzen.fr - internal view
+$TTL 120
+@ IN SOA dns.franzen.fr. postmaster.franzen.fr. (
+        2021020900; SERIAL
+        3600; REFRESH
+        15M; RETRY
+        1W; EXPIRE
+        600 ) ; Negative Cache TTL
+
+; Serveur de nom ayant autorité sur le domaine
+data-wifi.home.franzen.fr. 		IN  NS      dns.franzen.fr.
+
+;;; Noeuds du domaine - 
+; Garde les IPs publique pour les serveurs sys
+;; IP v4 (Host)
+entreprise-eth1-50				IN A 		192.168.50.254
