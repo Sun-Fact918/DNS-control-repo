@@ -1,0 +1,113 @@
+options {
+	directory "/var/cache/bind";
+
+	// If there is a firewall between you and nameservers you want
+	// to talk to, you may need to fix the firewall to allow multiple
+	// ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+	// If your ISP provided one or more IP addresses for stable 
+	// nameservers, you probably want to use them as forwarders.  
+	// Uncomment the following block, and insert the addresses replacing 
+	// the all-0's placeholder.
+
+	// forwarders {
+	// 	0.0.0.0;
+	// };
+
+	//========================================================================
+	// If BIND logs error messages about the root key being expired,
+	// you will need to update your keys.  See https://www.isc.org/bind-keys
+	//========================================================================
+	dnssec-validation auto;
+	dnssec-enable yes;
+	
+	auth-nxdomain no;    # conform to RFC1035
+	listen-on-v6 { any; };
+	listen-on { any; };
+
+	// Bloque la recursion
+                recursion no;
+
+        // Masque la version de BIND utilisée
+                version "Chtuko DNS";
+};
+
+
+key dns_int. {
+        algorithm hmac-sha512;
+        secret "lU7o9uf6Q/gzPmXCsIwj7rO6OMymEvSOBtNWi2u3ZvhiGQEZtQ7JqTSl497TR/4HWHtx05dcjLDXsf/2LWRmTQ==";
+};
+
+key dns1. {
+	algorithm "hmac-sha512";
+	secret "GSsEbnpOlo4iHEK7nW3zBjQbS3nvIM1WSA7WJ1BKOswF2ACnUYhba9yK8Qdaym0QJTMVaL3KF4Ql9YBji3SDrQ==";
+};
+
+key dns2. {
+	algorithm "hmac-sha512";
+	secret "EmVx3qhL8qB/TTESB77S/AgJD8PEWbnBwn+IkfKEHPipF0+VNyyw0UtK7xqt/1uy2ctKFrZ/2R7LgwwC1aqoQw==";
+};
+
+masters dns1 { 172.16.0.50; 2001:470:1f13:24::50; };
+masters dns2 { 172.16.0.51; 2001:470:1f13:24::51; };
+
+masters dme { dns1; dns2; };
+
+acl dns_int { 172.16.1.251; };
+
+acl int_rslv { dns_int; };
+
+
+#logging {
+#        channel client {
+#                         file "/var/log/named/client.log"  size 5m versions 2;
+#                         print-time yes;
+#                         print-category yes;
+#                         print-severity yes;
+#                         severity info;
+#                        };
+#         channel security {
+#                         file "/var/log/named/security.log"  size 5m versions 2;
+#                         print-time yes;
+#                         print-category yes;
+#                         print-severity yes;
+#                         severity info;
+#                        };
+#         channel resolver {
+#                         file "/var/log/named/resolution.log"  size 5m versions 2;
+#                         print-time yes;
+#                         print-category yes;
+#                         print-severity yes;
+#                         severity info;
+#                        };
+#         channel zone_transfers {
+#                         file "/var/log/named/zone.log"  size 5m versions 2;
+#                         print-time yes;
+#                          print-category yes;
+#                         print-severity yes;
+#                         severity info;
+#                        };
+#         channel network {
+#                         file "/var/log/named/network.log"  size 5m versions 2;
+#                         print-time yes;
+#                         print-category yes;
+#                         print-severity yes;
+#                         severity info;
+#                        };
+#        channel dnssec {
+#                         file "/var/log/named/dnssec.log"  size 5m versions 2;
+#                         print-time yes;
+#                         print-category yes;
+#                         print-severity yes;
+#                         severity info;
+#                        };
+#
+#        category queries {client;};
+#        category security {security;};
+#        category resolver {resolver;};
+#        category xfer-in {zone_transfers;};
+#        category xfer-out {zone_transfers;};
+#        category network {network;};
+#        category dnssec {dnssec;};
+#};
+
