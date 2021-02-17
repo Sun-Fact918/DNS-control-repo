@@ -1,4 +1,5 @@
-;42.168.192.in-addr.arpa. 
+;42.168.192.in-addr.arpa.
+$TTL 3600
 $ORIGIN 42.168.192.in-addr.arpa.
 @           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 

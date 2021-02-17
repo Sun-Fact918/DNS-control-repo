@@ -45,7 +45,7 @@ view "private" {
 
     zone "franzen.fr" {
         type master;
-        file "zones/private/forward/db.franzen.fr";
+        file "zones/private/forward/franzen.fr";
     };
 
     zone "int.franzen.fr" {
