@@ -10,12 +10,12 @@ view "public" {
 
     zone "franzen.fr" {
         type master;
-        file "zones/db.franzen.fr";
+        file "zones/private/forward/db.franzen.fr";
     };
 
     zone "int.franzen.fr" {
         type master;
-        file "zones/chtuko/db.int.franzen.fr";
+        file "zones/private/unsigned/db.int.franzen.fr";
     };
 
     // 17/02/2021 - Old testing stuff - To decom with the rest of the zones
@@ -41,12 +41,12 @@ view "private" {
 
     zone "franzen.fr" {
         type master;
-        file "zones/public/forward/db.franzen.fr";
+        file "zones/private/forward/db.franzen.fr";
     };
 
     zone "int.franzen.fr" {
         type master;
-        file "zones/public/forward/int.franzen.fr";
+        file "zones/private/forward/int.franzen.fr";
 
     };
 
