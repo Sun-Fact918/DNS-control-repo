@@ -179,42 +179,49 @@ view "private" {
     zone "40.168.192.in-addr.arpa"  {
 	    type master;
 	    file "zones/private/reverse/40.168.192.in-addr.arpa";
+	    allow-update { bifrost; };
     };
 
     zone "41.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/41.168.192.in-addr.arpa";
+        allow-update { bifrost; };
     };
 
     zone "42.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/42.168.192.in-addr.arpa";
+        allow-update { bifrost; };
     };
 
     zone "43.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/43.168.192.in-addr.arpa";
+        allow-update { bifrost; };
     };
 
     zone "44.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/44.168.192.in-addr.arpa";
+        allow-update { bifrost; };
     };
 
     zone "45.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/45.168.192.in-addr.arpa";
-
+        allow-update { bifrost; };
     };
 
     zone "46.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/46.168.192.in-addr.arpa";
+        allow-update { bifrost; };
     };
 
     zone "47.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/47.168.192.in-addr.arpa";
+        allow-update { bifrost; };
     };
 
     //
@@ -223,31 +230,37 @@ view "private" {
     zone "48.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/48.168.192.in-addr.arpa";
+        allow-update { entreprise; };
     };
 
     zone "49.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/49.168.192.in-addr.arpa";
+        allow-update { entreprise; };
     };
 
     zone "50.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/50.168.192.in-addr.arpa";
+        allow-update { entreprise; };
     };
 
     zone "51.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/51.168.192.in-addr.arpa";
+        allow-update { entreprise; };
     };
 
     zone "52.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/52.168.192.in-addr.arpa";
+        allow-update { entreprise; };
     };
 
     zone "53.168.192.in-addr.arpa" {
         type master;
         file "zones/private/reverse/53.168.192.in-addr.arpa";
+        allow-update { entreprise; };
     };
 
     // RFC1912 zones - must be declared in views
