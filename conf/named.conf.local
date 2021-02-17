@@ -2,7 +2,7 @@
 // Public Views - destined to public facing DNS
 //
 view "public" {
-    match-clients { dns_public; };
+    match-clients { dns1; dns2; };
     notify yes;
     also-notify { dns_public; };
     allow-transfer { key dns1; key dns2; };
@@ -10,7 +10,7 @@ view "public" {
 
     zone "franzen.fr" {
         type master;
-        file "zones/public/forward/franzen.fr";
+        file "zones/public/forward/db.franzen.fr";
     };
 
     zone "int.franzen.fr" {
