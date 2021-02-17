@@ -1,4 +1,5 @@
 ;iot.home.franzen.fr - internal view
+$TTL 3600
 $ORIGIN iot.home.franzen.fr.
 @           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 

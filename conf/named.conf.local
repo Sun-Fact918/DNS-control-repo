@@ -10,12 +10,12 @@ view "public" {
 
     zone "franzen.fr" {
         type master;
-        file "zones/private/forward/db.franzen.fr";
+        file "zones/public/forward/franzen.fr";
     };
 
     zone "int.franzen.fr" {
         type master;
-        file "zones/private/unsigned/db.int.franzen.fr";
+        file "zones/public/unsigned/int.franzen.fr";
     };
 
     // RFC1912 zones - must be declared in views

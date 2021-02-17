@@ -1,4 +1,5 @@
 ;wapping.franzen.fr - internal view
+$TTL 3600
 $ORIGIN wapping.franzen.fr.
 @           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 

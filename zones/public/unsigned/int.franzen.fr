@@ -1,4 +1,5 @@
 ;int.franzen.fr - public view
+$TTL 3600
 ;IPv6 records only - for Let's encrypt to work
 ;Put only host which needs to generate a certificate
 $ORIGIN int.franzen.fr.

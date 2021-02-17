@@ -1,4 +1,5 @@
 ;int.franzen.fr - internal view
+$TTL 3600
 $ORIGIN int.franzen.fr.
 @           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 
