@@ -10,19 +10,19 @@ view "public" {
 
     zone "franzen.fr" {
         type master;
-        file "/etc/bind/zones/db.franzen.fr";
+        file "zones/db.franzen.fr";
     };
 
     zone "int.franzen.fr" {
         type master;
-        file "/etc/bind/zones/chtuko/int.franzen.fr";
+        file "zones/chtuko/db.int.franzen.fr";
     };
 
     // 17/02/2021 - Old testing stuff - To decom with the rest of the zones
     //zone "tatayoyo.franzen.fr"
     //{
     //        type master;
-    //        file "/etc/bind/zones/db.tatayoyo.franzen.fr";
+    //        file "zones/db.tatayoyo.franzen.fr";
     //        allow-transfer{ key komoe; };
     //        allow-query{ localhost; };
     //        notify yes;
@@ -41,12 +41,12 @@ view "private" {
 
     zone "franzen.fr" {
         type master;
-        file "/etc/bind/zones/db.franzen.fr";
+        file "zones/public/forward/db.franzen.fr";
     };
 
     zone "int.franzen.fr" {
         type master;
-        file "/etc/bind/zones/chtuko/int.franzen.fr";
+        file "zones/public/forward/int.franzen.fr";
 
     };
 
@@ -55,43 +55,43 @@ view "private" {
     //
     zone "home.franzen.fr" {
         type master;
-        file "/etc/bind/zones/home/home.franzen.fr";
+        file "zones/private/forward/home.franzen.fr";
         allow-update { entreprise; };
     };
 
     zone "data.home.franzen.fr" {
         type master;
-        file "/etc/bind/zones/home/data.home.franzen.fr";
+        file "zones/private/forward/data.home.franzen.fr";
         allow-update { entreprise; };
     };
 
     zone "data-wifi.home.franzen.fr" {
         type master;
-        file "/etc/bind/zones/home/data-wifi.home.franzen.fr";
+        file "zones/private/forward/data-wifi.home.franzen.fr";
         allow-update { entreprise; };
     };
 
     zone "iot.home.franzen.fr" {
         type master;
-        file "/etc/bind/zones/home/iot.home.franzen.fr";
+        file "zones/private/forward/iot.home.franzen.fr";
         allow-update { entreprise; };
     };
 
     zone "iot-wifi.home.franzen.fr" {
         type master;
-        file "/etc/bind/zones/home/iot-wifi.home.franzen.fr";
+        file "zones/private/forward/iot-wifi.home.franzen.fr";
         allow-update { entreprise; };
     };
 
     zone "mgmt.home.franzen.fr" {
         type master;
-        file "/etc/bind/zones/home/mgmt.home.franzen.fr";
+        file "zones/private/forward/mgmt.home.franzen.fr";
         allow-update { entreprise; };
     };
 
     zone "svc.home.franzen.fr" {
         type master;
-        file "/etc/bind/zones/home/svc.home.franzen.fr";
+        file "zones/private/forward/svc.home.franzen.fr";
         allow-update { entreprise; };
     };
 
@@ -100,54 +100,54 @@ view "private" {
     //
     zone "wapping.franzen.fr" {
         type master;
-        file "/etc/bind/zones/wapping/wapping.franzen.fr";
+        file "zones/private/forward/wapping.franzen.fr";
     };
 
     zone "data.wapping.franzen.fr" {
 	    type master;
-	    file "/etc/bind/zones/wapping/data.wapping.franzen.fr";
+	    file "zones/private/forward//data.wapping.franzen.fr";
 	    allow-update { bifrost; };
     };
 
     zone "data-wifi.wapping.franzen.fr" {
 	    type master;
-	    file "/etc/bind/zones/wapping/data-wifi.wapping.franzen.fr";
+	    file "zones/private/forward/data-wifi.wapping.franzen.fr";
 	    allow-update { bifrost; };
     };
 
     zone "iot.wapping.franzen.fr" {
         type master;
-        file "/etc/bind/zones/wapping/iot.wapping.franzen.fr";
+        file "zones/private/forward/iot.wapping.franzen.fr";
         allow-update { bifrost; };
     };
 
     zone "iot-wifi.wapping.franzen.fr" {
         type master;
-        file "/etc/bind/zones/wapping/iot-wifi.wapping.franzen.fr";
+        file "zones/private/forward/iot-wifi.wapping.franzen.fr";
         allow-update { bifrost; };
     };
 
     zone "mgmt.wapping.franzen.fr" {
         type master;
-        file "/etc/bind/zones/wapping/mgmt.wapping.franzen.fr";
+        file "zones/private/forward/mgmt.wapping.franzen.fr";
         allow-update { bifrost; };
     };
 
     zone "priv.wapping.franzen.fr" {
         type master;
-        file "/etc/bind/zones/wapping/priv.wapping.franzen.fr";
+        file "zones/private/forward/priv.wapping.franzen.fr";
         allow-update { bifrost; };
     };
 
     zone "priv-wifi.wapping.franzen.fr" {
         type master;
-        file "/etc/bind/zones/wapping/priv-wifi.wapping.franzen.fr";
+        file "zones/private/forward/priv-wifi.wapping.franzen.fr";
         allow-update { bifrost; };
     };
 
     zone "svc.wapping.franzen.fr" {
         type master;
-        file "/etc/bind/zones/wapping/svc.wapping.franzen.fr";
+        file "zones/private/forward/svc.wapping.franzen.fr";
         allow-update { bifrost; };
     };
 
@@ -161,12 +161,12 @@ view "private" {
     //
     zone "0.16.172.in-addr.arpa" {
 	    type master;
-	    file "/etc/bind/zones/chtuko/0.16.172.in-addr.arpa";
+	    file "zones/private/reverse/0.16.172.in-addr.arpa";
     };
 
     zone "1.16.172.in-addr.arpa" {
 	    type master;
-	    file "/etc/bind/zones/chtuko/1.16.172.in-addr.arpa";
+	    file "zones/private/reverse/1.16.172.in-addr.arpa";
     };
 
     //
@@ -174,43 +174,43 @@ view "private" {
     //
     zone "40.168.192.in-addr.arpa"  {
 	    type master;
-	    file "/etc/bind/zones/wapping/40.168.192.in-addr.arpa";
+	    file "zones/private/reverse/40.168.192.in-addr.arpa";
     };
 
     zone "41.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/wapping/41.168.192.in-addr.arpa";
+        file "zones/private/reverse/41.168.192.in-addr.arpa";
     };
 
     zone "42.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/wapping/42.168.192.in-addr.arpa";
+        file "zones/private/reverse/42.168.192.in-addr.arpa";
     };
 
     zone "43.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/wapping/43.168.192.in-addr.arpa";
+        file "zones/private/reverse/43.168.192.in-addr.arpa";
     };
 
     zone "44.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/wapping/44.168.192.in-addr.arpa";
+        file "zones/private/reverse/44.168.192.in-addr.arpa";
     };
 
     zone "45.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/wapping/45.168.192.in-addr.arpa";
+        file "zones/private/reverse/45.168.192.in-addr.arpa";
 
     };
 
     zone "46.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/wapping/46.168.192.in-addr.arpa";
+        file "zones/private/reverse/46.168.192.in-addr.arpa";
     };
 
     zone "47.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/wapping/47.168.192.in-addr.arpa";
+        file "zones/private/reverse/47.168.192.in-addr.arpa";
     };
 
     //
@@ -218,32 +218,32 @@ view "private" {
     //
     zone "48.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/home/48.168.192.in-addr.arpa";
+        file "zones/private/reverse/48.168.192.in-addr.arpa";
     };
 
     zone "49.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/home/49.168.192.in-addr.arpa";
+        file "zones/private/reverse/49.168.192.in-addr.arpa";
     };
 
     zone "50.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/home/50.168.192.in-addr.arpa";
+        file "zones/private/reverse/50.168.192.in-addr.arpa";
     };
 
     zone "51.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/home/51.168.192.in-addr.arpa";
+        file "zones/private/reverse/51.168.192.in-addr.arpa";
     };
 
     zone "52.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/home/52.168.192.in-addr.arpa";
+        file "zones/private/reverse/52.168.192.in-addr.arpa";
     };
 
     zone "53.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/zones/home/53.168.192.in-addr.arpa";
+        file "zones/private/reverse/53.168.192.in-addr.arpa";
     };
 
 };

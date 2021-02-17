@@ -1,0 +1,24 @@
+;int.franzen.fr - public view
+;IPv6 records only - for Let's encrypt to work
+;Put only host which needs to generate a certificate
+$ORIGIN int.franzen.fr.
+@           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
+
+                2021020900      ; Serial  - YYYYMMDDNN
+                3600            ; Refresh - 1h
+                1800            ; Retry   - 30mn
+                604800          ; Expire  - 1 week
+                900 )           ; Negative Cache - 5mn
+
+; Authoritative DNS Servers
+int.franzen.fr.     IN  NS      dns.franzen.fr.
+
+; Domain Records
+dns					IN AAAA	2001:470:c80d:1::251
+elastic-01			IN AAAA	2001:470:c80d:1::160
+index				IN AAAA	2001:470:1f13:24::10
+kibana-01			IN AAAA 2001:470:c80d:1::162
+log-writer-01		IN AAAA 2001:470:c80d:1::158
+pi-hole				IN AAAA	2001:470:1f13:24::250
+syslog-01			IN AAAA 2001:470:c80d:1::150
+unifi				IN AAAA 2001:470:c80d:1::210
