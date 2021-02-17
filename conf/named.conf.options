@@ -43,13 +43,21 @@ key dns2. {
 	secret "EmVx3qhL8qB/TTESB77S/AgJD8PEWbnBwn+IkfKEHPipF0+VNyyw0UtK7xqt/1uy2ctKFrZ/2R7LgwwC1aqoQw==";
 };
 
-acl dns1 {  172.16.0.50;
+// For also-notify statements
+masters dns1 {  172.16.0.50;
                 2001:470:1f13:24::50; };
-acl dns2 {  172.16.0.51;
+masters dns2 {  172.16.0.51;
                 2001:470:1f13:24::51; };
 masters dns_public { dns1;
                      dns2; };
 
+// For view match-client statement
+acl dns1 {  172.16.0.50;
+            2001:470:1f13:24::50; };
+acl dns2 {  172.16.0.51;
+            2001:470:1f13:24::51; };
+acl dns_public { dns1;
+                 dns2; };
 
 // Internal
 
