@@ -18,6 +18,10 @@ view "public" {
         file "zones/private/unsigned/db.int.franzen.fr";
     };
 
+    // RFC1912 zones - must be declared in views
+    include "/etc/bind/named.conf.default-zones";
+
+
     // 17/02/2021 - Old testing stuff - To decom with the rest of the zones
     //zone "tatayoyo.franzen.fr"
     //{
@@ -245,6 +249,9 @@ view "private" {
         type master;
         file "zones/private/reverse/53.168.192.in-addr.arpa";
     };
+
+    // RFC1912 zones - must be declared in views
+    include "/etc/bind/named.conf.default-zones";
 
 };
 
