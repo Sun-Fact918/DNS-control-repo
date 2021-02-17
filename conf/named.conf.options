@@ -49,6 +49,9 @@ masters dns2 {  172.16.0.51;
                 2001:470:1f13:24::51; };
 masters dns_public {    dns1;
                         dns2; };
+acl acl_dns_public {    dns1;
+                        dns2; };
+
 
 // Internal
 
