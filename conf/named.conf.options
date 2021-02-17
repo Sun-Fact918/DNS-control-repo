@@ -66,6 +66,12 @@ key int_dns. {
         secret "lU7o9uf6Q/gzPmXCsIwj7rO6OMymEvSOBtNWi2u3ZvhiGQEZtQ7JqTSl497TR/4HWHtx05dcjLDXsf/2LWRmTQ==";
 };
 
+// For also-notify statements
+masters int_dns { 172.16.1.251;
+                  2001:470:c80d:1::251; };
+masters dns_internal { dns_int; };
+
+// For view match-client statement
 acl int_dns { 172.16.1.251;
               2001:470:c80d:1::251; };
 acl dns_internal { dns_int; };
