@@ -25,18 +25,13 @@ options {
 	listen-on-v6 { any; };
 	listen-on { any; };
 
-	// Bloque la recursion
-                recursion no;
-
-        // Masque la version de BIND utilisée
-                version "Chtuko DNS";
+	// Security stuff
+    recursion no;
+    version none;
 };
 
-
-key dns_int. {
-        algorithm hmac-sha512;
-        secret "lU7o9uf6Q/gzPmXCsIwj7rO6OMymEvSOBtNWi2u3ZvhiGQEZtQ7JqTSl497TR/4HWHtx05dcjLDXsf/2LWRmTQ==";
-};
+// ---- ACLs ---
+// Public
 
 key dns1. {
 	algorithm "hmac-sha512";
@@ -48,15 +43,33 @@ key dns2. {
 	secret "EmVx3qhL8qB/TTESB77S/AgJD8PEWbnBwn+IkfKEHPipF0+VNyyw0UtK7xqt/1uy2ctKFrZ/2R7LgwwC1aqoQw==";
 };
 
-masters dns1 { 172.16.0.50; 2001:470:1f13:24::50; };
-masters dns2 { 172.16.0.51; 2001:470:1f13:24::51; };
+masters dns1 {  172.16.0.50;
+                2001:470:1f13:24::50; };
+masters dns2 {  172.16.0.51;
+                2001:470:1f13:24::51; };
+masters dns_public {    dns1;
+                        dns2; };
 
-masters dme { dns1; dns2; };
+// Internal
 
-acl dns_int { 172.16.1.251; };
+key int_dns. {
+        algorithm hmac-sha512;
+        secret "lU7o9uf6Q/gzPmXCsIwj7rO6OMymEvSOBtNWi2u3ZvhiGQEZtQ7JqTSl497TR/4HWHtx05dcjLDXsf/2LWRmTQ==";
+};
 
-acl int_rslv { dns_int; };
+acl int_dns { 172.16.1.251;
+              2001:470:c80d:1::251; };
+acl dns_internal { dns_int; };
 
+
+// DHCP Routers
+// Should be using key - have to dig deeper within the Edgerouter
+
+acl bifrost { 172.16.10.2; };
+acl entreprise { 172.16.10.6; };
+
+acl home_routers {  bifrost;
+                    entreprise; };
 
 #logging {
 #        channel client {

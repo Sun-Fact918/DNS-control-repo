@@ -1,310 +1,252 @@
 //
-// Do any local configuration here
+// Public Views - destined to public facing DNS
 //
+view "public" {
+    match-clients { dns_public; };
+    notify yes;
+    also-notify { dns_public; };
+    allow-transfer { key dns1; key dns2; };
+    allow-query { localhost; key dns1; key dns2; };
 
-zone "franzen.fr"
-{
+    zone "franzen.fr" {
         type master;
         file "/etc/bind/zones/db.franzen.fr";
-        allow-transfer { key dns1; key dns2; };
-        allow-query { localhost; key dns1; key dns2; };
-        also-notify { dme; };
-	notify yes;
-};
+    };
 
-zone "int.franzen.fr"
-{
+    zone "int.franzen.fr" {
         type master;
         file "/etc/bind/zones/chtuko/int.franzen.fr";
-        allow-transfer { key dns_int; };
-        allow-query { key dns_int; };
-        notify yes;
+    };
+
+    // 17/02/2021 - Old testing stuff - To decom with the rest of the zones
+    //zone "tatayoyo.franzen.fr"
+    //{
+    //        type master;
+    //        file "/etc/bind/zones/db.tatayoyo.franzen.fr";
+    //        allow-transfer{ key komoe; };
+    //        allow-query{ localhost; };
+    //        notify yes;
+    //};
 };
 
-zone "0.16.172.in-addr.arpa"
-{
-	type master;
-	file "/etc/bind/zones/chtuko/0.16.172.in-addr.arpa";
-	allow-transfer { key dns_int; };
-	allow-query { key dns_int; };
-	notify yes;
-};
+//
+// Private Views - destined to private DNS only
+//
+view "private" {
+    match-clients { any; };
+    notify yes;
+    also-notify { dns_internal; };
+    allow-transfer { key int_dns; };
+    allow-query { localhost; key int_dns; home_routers; };
 
-zone "1.16.172.in-addr.arpa"
-{
-	type master;
-	file "/etc/bind/zones/chtuko/1.16.172.in-addr.arpa";
-	allow-transfer { key dns_int; };
-	allow-query { key dns_int; };
-	notify yes;
-};
-
-zone "wapping.franzen.fr"
-{
+    zone "franzen.fr" {
         type master;
-        file "/etc/bind/zones/wapping/wapping.franzen.fr";
-        allow-update { 172.16.10.2; };
-        allow-transfer { key dns_int; };
-        allow-query { 172.16.10.2; key dns_int; };
-        notify yes;
+        file "/etc/bind/zones/db.franzen.fr";
+    };
 
-};
-
-zone "data.wapping.franzen.fr"
-{
-	type master;
-	file "/etc/bind/zones/wapping/data.wapping.franzen.fr";
-	allow-update { 172.16.10.2; };
-	allow-transfer { key dns_int; };
-	allow-query { 172.16.10.2; key dns_int; };
-        notify yes;
-	
-};
-
-zone "40.168.192.in-addr.arpa"
-{
-	type master;
-	file "/etc/bind/zones/wapping/40.168.192.in-addr.arpa";
-	allow-transfer { key dns_int; };
-	allow-update { 172.16.10.2; };
-        allow-query { 172.16.10.2; key dns_int; };
-	notify yes;
-};
-
-zone "svc.wapping.franzen.fr"
-{
+    zone "int.franzen.fr" {
         type master;
-        file "/etc/bind/zones/wapping/svc.wapping.franzen.fr";
-        allow-transfer { key dns_int; };
-	allow-update { 172.16.10.2; };
-        allow-query { 172.16.10.2; key dns_int; };
-	notify yes;
-};
+        file "/etc/bind/zones/chtuko/int.franzen.fr";
 
-zone "41.168.192.in-addr.arpa"
-{
-        type master;
-        file "/etc/bind/zones/wapping/41.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-	allow-update { 172.16.10.2; };
-        allow-query { 172.16.10.2; key dns_int; };
-	notify yes;
-};
+    };
 
-zone "mgmt.wapping.franzen.fr"
-{
-        type master;
-        file "/etc/bind/zones/wapping/mgmt.wapping.franzen.fr";
-        allow-transfer { key dns_int; };
-	allow-update { 172.16.10.2; };
-        allow-query { 172.16.10.2; key dns_int; };
-	notify yes;
-};
-
-zone "42.168.192.in-addr.arpa"
-{
-        type master;
-        file "/etc/bind/zones/wapping/42.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-	allow-update { 172.16.10.2; };
-        allow-query { 172.16.10.2; key dns_int; };
-	notify yes;
-};
-
-zone "iot.wapping.franzen.fr"
-{
-        type master;
-        file "/etc/bind/zones/wapping/iot.wapping.franzen.fr";
-        allow-transfer { key dns_int; };
-	allow-update { 172.16.10.2; };
-        allow-query { 172.16.10.2; key dns_int; };
-	notify yes;
-};
-
-zone "43.168.192.in-addr.arpa"
-{
-        type master;
-        file "/etc/bind/zones/wapping/43.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-	allow-update { 172.16.10.2; };
-        allow-query { 172.16.10.2; key dns_int; };
-	notify yes;
-};
-
-zone "44.168.192.in-addr.arpa"
-{
-        type master;
-        file "/etc/bind/zones/wapping/44.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.2; };
-        allow-query { 172.16.10.2; key dns_int; };
-        notify yes;
-};
-
-zone "priv.wapping.franzen.fr"
-{
-        type master;
-        file "/etc/bind/zones/wapping/priv.wapping.franzen.fr";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.2; };
-        allow-query { 172.16.10.2; key dns_int; };
-        notify yes;
-};
-
-zone "45.168.192.in-addr.arpa"
-{
-        type master;
-        file "/etc/bind/zones/wapping/45.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.2; };
-        allow-query { 172.16.10.2; key dns_int; };
-        notify yes;
-};
-
-zone "home.franzen.fr"
-{
+    //
+    // Parent's Home Zones
+    //
+    zone "home.franzen.fr" {
         type master;
         file "/etc/bind/zones/home/home.franzen.fr";
-        allow-update { 172.16.10.6; };
-        allow-transfer { key dns_int; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
+        allow-update { entreprise; };
+    };
 
-};
-
-zone "data.home.franzen.fr"
-{
+    zone "data.home.franzen.fr" {
         type master;
         file "/etc/bind/zones/home/data.home.franzen.fr";
-        allow-update { 172.16.10.6; };
-        allow-transfer { key dns_int; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
+        allow-update { entreprise; };
+    };
 
-};
-
-zone "49.168.192.in-addr.arpa"
-{
-        type master;
-        file "/etc/bind/zones/home/49.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.6; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
-};
-
-zone "data-wifi.home.franzen.fr"
-{
+    zone "data-wifi.home.franzen.fr" {
         type master;
         file "/etc/bind/zones/home/data-wifi.home.franzen.fr";
-        allow-update { 172.16.10.6; };
-        allow-transfer { key dns_int; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
+        allow-update { entreprise; };
+    };
 
-};
-
-zone "50.168.192.in-addr.arpa"
-{
-        type master;
-        file "/etc/bind/zones/home/50.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.6; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
-};
-
-zone "svc.home.franzen.fr"
-{
-        type master;
-        file "/etc/bind/zones/home/svc.home.franzen.fr";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.6; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
-};
-
-zone "51.168.192.in-addr.arpa"
-{
-        type master;
-        file "/etc/bind/zones/home/51.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.6; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
-};
-
-zone "mgmt.home.franzen.fr"
-{
-        type master;
-        file "/etc/bind/zones/home/mgmt.home.franzen.fr";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.6; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
-};
-
-zone "48.168.192.in-addr.arpa"
-{
-        type master;
-        file "/etc/bind/zones/home/48.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.6; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
-};
-
-zone "iot.home.franzen.fr"
-{
+    zone "iot.home.franzen.fr" {
         type master;
         file "/etc/bind/zones/home/iot.home.franzen.fr";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.6; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
-};
+        allow-update { entreprise; };
+    };
 
-zone "52.168.192.in-addr.arpa"
-{
-        type master;
-        file "/etc/bind/zones/home/52.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.6; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
-};
-
-zone "iot-wifi.home.franzen.fr"
-{
+    zone "iot-wifi.home.franzen.fr" {
         type master;
         file "/etc/bind/zones/home/iot-wifi.home.franzen.fr";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.6; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
-};
+        allow-update { entreprise; };
+    };
 
-zone "53.168.192.in-addr.arpa"
-{
+    zone "mgmt.home.franzen.fr" {
+        type master;
+        file "/etc/bind/zones/home/mgmt.home.franzen.fr";
+        allow-update { entreprise; };
+    };
+
+    zone "svc.home.franzen.fr" {
+        type master;
+        file "/etc/bind/zones/home/svc.home.franzen.fr";
+        allow-update { entreprise; };
+    };
+
+    //
+    // Wapping Zones
+    //
+    zone "wapping.franzen.fr" {
+        type master;
+        file "/etc/bind/zones/wapping/wapping.franzen.fr";
+    };
+
+    zone "data.wapping.franzen.fr" {
+	    type master;
+	    file "/etc/bind/zones/wapping/data.wapping.franzen.fr";
+	    allow-update { bifrost; };
+    };
+
+    zone "data-wifi.wapping.franzen.fr" {
+	    type master;
+	    file "/etc/bind/zones/wapping/data-wifi.wapping.franzen.fr";
+	    allow-update { bifrost; };
+    };
+
+    zone "iot.wapping.franzen.fr" {
+        type master;
+        file "/etc/bind/zones/wapping/iot.wapping.franzen.fr";
+        allow-update { bifrost; };
+    };
+
+    zone "iot-wifi.wapping.franzen.fr" {
+        type master;
+        file "/etc/bind/zones/wapping/iot-wifi.wapping.franzen.fr";
+        allow-update { bifrost; };
+    };
+
+    zone "mgmt.wapping.franzen.fr" {
+        type master;
+        file "/etc/bind/zones/wapping/mgmt.wapping.franzen.fr";
+        allow-update { bifrost; };
+    };
+
+    zone "priv.wapping.franzen.fr" {
+        type master;
+        file "/etc/bind/zones/wapping/priv.wapping.franzen.fr";
+        allow-update { bifrost; };
+    };
+
+    zone "priv-wifi.wapping.franzen.fr" {
+        type master;
+        file "/etc/bind/zones/wapping/priv-wifi.wapping.franzen.fr";
+        allow-update { bifrost; };
+    };
+
+    zone "svc.wapping.franzen.fr" {
+        type master;
+        file "/etc/bind/zones/wapping/svc.wapping.franzen.fr";
+        allow-update { bifrost; };
+    };
+
+
+    //
+    // Reverse zones - In order
+    //
+
+    //
+    // Cthuko Zones
+    //
+    zone "0.16.172.in-addr.arpa" {
+	    type master;
+	    file "/etc/bind/zones/chtuko/0.16.172.in-addr.arpa";
+    };
+
+    zone "1.16.172.in-addr.arpa" {
+	    type master;
+	    file "/etc/bind/zones/chtuko/1.16.172.in-addr.arpa";
+    };
+
+    //
+    // Wapping Zones
+    //
+    zone "40.168.192.in-addr.arpa"  {
+	    type master;
+	    file "/etc/bind/zones/wapping/40.168.192.in-addr.arpa";
+    };
+
+    zone "41.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/wapping/41.168.192.in-addr.arpa";
+    };
+
+    zone "42.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/wapping/42.168.192.in-addr.arpa";
+    };
+
+    zone "43.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/wapping/43.168.192.in-addr.arpa";
+    };
+
+    zone "44.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/wapping/44.168.192.in-addr.arpa";
+    };
+
+    zone "45.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/wapping/45.168.192.in-addr.arpa";
+
+    };
+
+    zone "46.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/wapping/46.168.192.in-addr.arpa";
+    };
+
+    zone "47.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/wapping/47.168.192.in-addr.arpa";
+    };
+
+    //
+    // Parent's Home Zones
+    //
+    zone "48.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/home/48.168.192.in-addr.arpa";
+    };
+
+    zone "49.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/home/49.168.192.in-addr.arpa";
+    };
+
+    zone "50.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/home/50.168.192.in-addr.arpa";
+    };
+
+    zone "51.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/home/51.168.192.in-addr.arpa";
+    };
+
+    zone "52.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/home/52.168.192.in-addr.arpa";
+    };
+
+    zone "53.168.192.in-addr.arpa" {
         type master;
         file "/etc/bind/zones/home/53.168.192.in-addr.arpa";
-        allow-transfer { key dns_int; };
-        allow-update { 172.16.10.6; };
-        allow-query { 172.16.10.6; key dns_int; };
-        notify yes;
+    };
+
 };
-
-
-//zone "tatayoyo.franzen.fr"
-//{
-//        type master;
-//        file "/etc/bind/zones/db.tatayoyo.franzen.fr";
-//        allow-transfer{ key komoe; };
-//        allow-query{ localhost; };
-//        notify yes;
-//};
-
-
 
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
