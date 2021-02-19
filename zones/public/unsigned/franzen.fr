@@ -1,121 +1,78 @@
 ;franzen.fr
 $TTL 120
-@ IN SOA dns1.franzen.fr. postmaster.franzen.fr. (
-        2018042209; SERIAL
-        3600; REFRESH
-        15M; RETRY
-        1W; EXPIRE
-        600 ) ; Negative Cache TTL
+@ORIGIN franzen.fr.
+@           IN SOA dns1.franzen.fr. postmaster.franzen.fr. (
 
-; Serveur de nom ayant autorité sur le domaine
-franzen.fr. IN  NS      dns1.franzen.fr.
-franzen.fr. IN  NS      dns2.franzen.fr.
+                2021020900      ; Serial  - YYYYMMDDNN
+                3600            ; Refresh - 1h
+                1800            ; Retry   - 30mn
+                604800          ; Expire  - 1 week
+                900 )           ; Negative Cache - 5mn
+
+
+; Authoritative DNS Servers
+franzen.fr.             IN  NS      dns1.franzen.fr.
+franzen.fr.             IN  NS      dns2.franzen.fr.
 
 
 ; Secu Mail : SPF, DKIM, DMARC
-;franzen.fr.		IN SPF	"v=spf1 mx:franzen.fr ip4:178.33.249.89 ip6:2001:470:1f13:24::60 -all"
-franzen.fr.		IN TXT "v=spf1 mx:franzen.fr ip4:178.33.249.89 ip6:2001:470:1f13:24::60 ip4:37.59.205.231 ip6:2001:470:1f13:24::202 ~all"
-mail._domainkey 	IN TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDFYr1U9gBN/wpjkgj+kKXvzujuQVyTZ8LomC2kicp1q4rkrlRvc0GSf1HzFWr4pPJuNdJNFODBMHs4j0Xiovk6qtoUL0Bj7TZnsA0YYOS49Vcwhu8SE4WLdlMHDlVvuvmGtOPkHvEx7n8rHmhfILnwyEegWfr7OrLrN3iWQgJ3QIDAQAB"
-_dmarc.franzen.fr. 	IN TXT "v=DMARC1; p=none; sp=none; pct=5; rua=mailto:dmarc@franzen.fr"
+;franzen.fr.		            IN SPF	"v=spf1 mx:franzen.fr ip4:178.33.249.89 ip6:2001:470:1f13:24::60 -all"
+franzen.fr.		                IN TXT "v=spf1 mx:franzen.fr ip4:178.33.249.89 ip6:2001:470:1f13:24::60 ip4:37.59.205.231 ip6:2001:470:1f13:24::202 ~all"
+mail._domainkey 	            IN TXT "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDFYr1U9gBN/wpjkgj+kKXvzujuQVyTZ8LomC2kicp1q4rkrlRvc0GSf1HzFWr4pPJuNdJNFODBMHs4j0Xiovk6qtoUL0Bj7TZnsA0YYOS49Vcwhu8SE4WLdlMHDlVvuvmGtOPkHvEx7n8rHmhfILnwyEegWfr7OrLrN3iWQgJ3QIDAQAB"
+_dmarc.franzen.fr. 	            IN TXT "v=DMARC1; p=none; sp=none; pct=5; rua=mailto:dmarc@franzen.fr"
 _adsp._domainkey.franzen.fr.	IN TXT "dkim=discardable"
 
-;;; Noeuds du domaine
+; Domain Records
 ;; IP v4 (Host)
-cerberus	 IN A		178.33.38.95
-chtuko           IN A           188.165.228.70
-cthuko		 IN A		5.135.131.19
-ika		 IN A		94.23.160.216
-matrix		 IN A		178.32.104.4
-missile		 IN A 		149.202.4.220
-relay		 IN A		37.59.205.231
-web		 IN A		188.165.79.188
-
-;; Service (nom fonction)
-dns1             IN A           178.32.101.9
-dns2             IN A           94.23.167.148
-smtp	         IN A           178.33.249.89
-smtp1		 IN A		37.59.205.231
+cerberus	    IN A		178.33.38.95
+chtuko          IN A        188.165.228.70
+cthuko		    IN A		5.135.131.19
+dns1            IN A        178.32.101.9
+dns2            IN A        94.23.167.148
+ika		        IN A		94.23.160.216
+matrix		    IN A		178.32.104.4
+relay		    IN A		37.59.205.231
+smtp	        IN A        178.33.249.89
+web		        IN A		188.165.79.188
 
 ;; IP v6 (Host)
-cerberus	IN AAAA		2001:470:1f12:24::2
-chtuko		IN AAAA		2001:41d0:2:af46::0
-;cthuko		IN AAAA		 TBD
-ika		IN AAAA		2001:41d0:2:af46::600
-matrix		IN AAAA		2001:41d0:2:af46::1000
-missile		IN AAAA		2001:41d0:2:af46::200
-relay		IN AAAA		2001:470:1f13:24::202
-web		IN AAAA		2001:470:1f13:24::20
-;
-;; Service (nom fonction)
-; OVH ne supporte pas les DNS et GLUE en IPv6
-dns1           IN AAAA         2001:470:1f13:24::50
-dns2           IN AAAA         2001:470:1f13:24::51
-smtp           IN AAAA         2001:470:1f13:24::60
-;smtp1	       IN AAAA	       2001:470:1f13:24::202
+cerberus	    IN AAAA		2001:470:1f12:24::2
+chtuko		    IN AAAA		2001:41d0:2:af46::0
+;cthuko		    IN AAAA		 TBD
+dns1            IN AAAA     2001:470:1f13:24::50
+dns2            IN AAAA     2001:470:1f13:24::51
+ika		        IN AAAA		2001:41d0:2:af46::600
+matrix		    IN AAAA		2001:41d0:2:af46::1000
+relay		    IN AAAA		2001:470:1f13:24::202
+smtp            IN AAAA     2001:470:1f13:24::60
+web		        IN AAAA		2001:470:1f13:24::20
 
-
-; Champs Racines
+; Root Records - For HE.NET IPv6 certification
 ;; Pointed to Cerberus for now
 franzen.fr. IN A       	178.33.38.95
 franzen.fr. IN AAAA     2001:470:1f12:24::2
 
-; Champ email
+; Mail records
 franzen.fr.  IN MX 10  smtp.franzen.fr.
-;franzen.fr.  IN MX 15  smtp1.franzen.fr.
 
 
 ; Alias CNAME
 ;;; Mail
-imap		IN CNAME	smtp
+imap		    IN CNAME	smtp
 
 ;;; Matrix
 ddl             IN CNAME        matrix
 transmission    IN CNAME        matrix
 
 ;;; Missile
-autoconfig	IN CNAME	web
-db		IN CNAME	web
-pass		IN CNAME	web
-pi-hole		IN CNAME	web
+autoconfig	    IN CNAME    	web
+db		        IN CNAME    	web
+pass		    IN CNAME    	web
 webmail         IN CNAME        web
-www		IN CNAME	web
-jenkins		IN CNAME	web
-
-;;; Dynamic DNS
-;nascar		IN CNAME	indexlibrorum1.ddns.net.
+www		        IN CNAME	    web
 
 
-;;; TLSA Record ; DANE/PKIX Check
-;_443._tcp.webmail.franzen.fr. IN TLSA 1 0 2 209a40d692ea34e0024cfa948dd53e951c6a284a8f32ec451139ceb089d5f4b6bdadb605aefaf3c459c4e552bee3aaff6cfa94029e526dc31160c110f52ac47e
+;;; Subdomain Delegation + DNSSEC
+; int.franzen.fr - used for Let's encrypt on IPv6 only
+int             IN NS           dns
 
-;;; SSHFP Record; SSHv2 Public Key
-; DSA RSA ECDSA
-matrix		 IN SSHFP 1 2 4B40298A7A3F11F47E23A800055F3E14605D6AB2DEA8B8B2A27F3BAF3933BBC8
-matrix		 IN SSHFP 2 2 2247D775AA41CED659174835726B6FF2D53C519D8AFA6B3A60B76A13A24EB460
-matrix		 IN SSHFP 3 2 1293C087082C7D276039E9AF9F73B588218323D8F70330B0503D84432FE87E6D
-matrix		 IN SSHFP 4 2 2C60C7C6C46C81B38BFB54D957CB516AD0ECC2FC820A354CBFF2CB8943C56D66
-matrix		 IN SSHFP 1 1 953EB989FAD84EF2D56CE2C3C6238297B268DC18
-matrix		 IN SSHFP 2 1 61C364AD86AC74806BBDF6362EAF9C9D15AD6B9F
-matrix		 IN SSHFP 3 1 8C5751AD1DCF59F8C7867BB1BD68D5A364032DD5
-matrix		 IN SSHFP 4 1 59DAE94B12261DBCCF4673269B67347517AB1D10
-
-;;; Subdomain Delegation + DNSSEC Signature
-;; Maquette Windows AD / Exchange
-;machina.corp.franzen.fr. IN A  		94.23.120.123
-;machina.corp.franzen.fr. IN AAAA	2001:41d0:2:af46::2000
-;corp.franzen.fr.	 IN NS 		machina.corp.franzen.fr.
-;; Seedbox
-; Jean
-;tatayoyo.franzen.fr.	IN NS dns1.franzen.fr.
-;tatayoyo.franzen.fr.	IN NS dns2.franzen.fr.
-; Nico
-;morpheus.franzen.fr.    IN NS dns1.franzen.fr.
-;morpheus.franzen.fr.    IN NS dns2.franzen.fr.
-;
-;; Web Server
-;blackhawk.franzen.fr.    IN NS dns1.franzen.fr.
-;blackhawk.franzen.fr.    IN NS dns2.franzen.fr.
-;
-;; Nyaruko LAN
-;toaru.franzen.fr	IN NS dns1.franzen.fr.
-;toaru.franzen.fr	IN NS dns2.franzen.fr.
