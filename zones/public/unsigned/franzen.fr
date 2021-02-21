@@ -3,7 +3,7 @@ $TTL 120
 @ORIGIN franzen.fr.
 @           IN SOA dns1.franzen.fr. postmaster.franzen.fr. (
 
-                2021020900      ; Serial  - YYYYMMDDNN
+                2021020901      ; Serial  - YYYYMMDDNN
                 3600            ; Refresh - 1h
                 1800            ; Retry   - 30mn
                 604800          ; Expire  - 1 week
@@ -74,5 +74,6 @@ www		        IN CNAME	    web
 
 ;;; Subdomain Delegation + DNSSEC
 ; int.franzen.fr - used for Let's encrypt on IPv6 only
-int             IN NS           dns
+int             IN NS           dns1.franzen.fr.
+int             IN NS           dns2.franzen.fr.
 
