@@ -3,7 +3,7 @@ $TTL 3600
 $ORIGIN home.franzen.fr.
 @           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 
-                2021020901      ; Serial  - YYYYMMDDNN
+                2021020902      ; Serial  - YYYYMMDDNN
                 3600            ; Refresh - 1h
                 1800            ; Retry   - 30mn
                 604800          ; Expire  - 1 week
@@ -17,4 +17,5 @@ entreprise				IN CNAME	entreprise-eth1-00.mgmt.home.franzen.fr.
 kafka                   IN CNAME    kafka.svc.home.franzen.fr.
 nascar					IN CNAME	nascar.svc.home.franzen.fr.
 pi-hole					IN CNAME	pi.svc.home.franzen.fr.
-proxmox                 IN CNAME    proxmox.mgmt.home.franzen.fr
+proxmox                 IN CNAME    proxmox.mgmt.home.franzen.fr.
+syslog                  IN CNAME    syslog.svc.home.franzen.fr.
