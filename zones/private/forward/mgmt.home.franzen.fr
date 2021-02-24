@@ -3,7 +3,7 @@ $TTL 3600
 $ORIGIN mgmt.home.franzen.fr.
 @           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 
-                2021020900      ; Serial  - YYYYMMDDNN
+                2021020901      ; Serial  - YYYYMMDDNN
                 3600            ; Refresh - 1h
                 1800            ; Retry   - 30mn
                 604800          ; Expire  - 1 week
@@ -14,3 +14,4 @@ mgmt.home.franzen.fr.       IN  NS      dns.franzen.fr.
 
 ; Domain Records
 entreprise-eth1-00          IN	A		192.168.48.254
+proxmox                     IN  A       192.168.48.150

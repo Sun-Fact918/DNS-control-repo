@@ -3,7 +3,7 @@ $TTL 3600
 $ORIGIN svc.home.franzen.fr.
 @           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 
-                2021020900      ; Serial  - YYYYMMDDNN
+                2021020901      ; Serial  - YYYYMMDDNN
                 3600            ; Refresh - 1h
                 1800            ; Retry   - 30mn
                 604800          ; Expire  - 1 week
@@ -14,5 +14,8 @@ svc.home.franzen.fr.        IN 	NS		dns.franzen.fr.
 
 ; Domain Records
 entreprise-eth1-51          IN	A		192.168.51.254
+kafka                       IN  A       192.168.51.155
+log-collector               IN  A       192.168.51.202
 nascar                      IN	A		192.168.51.150
 pi                          IN	A		192.168.51.200
+syslog                      IN  A       192.168.51.201

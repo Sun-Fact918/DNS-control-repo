@@ -3,7 +3,7 @@ $TTL 3600
 $ORIGIN 51.168.192.in-addr.arpa.
 @           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 
-                2021020900      ; Serial  - YYYYMMDDNN
+                2021020901      ; Serial  - YYYYMMDDNN
                 3600            ; Refresh - 1h
                 1800            ; Retry   - 30mn
                 604800          ; Expire  - 1 week
@@ -14,5 +14,8 @@ $ORIGIN 51.168.192.in-addr.arpa.
 
 ; Domain Records
 150			                    PTR	    nascar.home.franzen.fr
-200			                    PTR	    pi.svc.home.franzen.fr.
+155                             PTR     kafka.svc.home.franzen.fr.
+200			                    PTR	    pi-hole.svc.home.franzen.fr.
+201                             PTR     syslog.svc.home.franzen.fr.
+202                             PTR     log-collector.svc.home.franzen.fr.
 254			                    PTR	    entreprise-eth1-51.svc.home.franzen.fr.

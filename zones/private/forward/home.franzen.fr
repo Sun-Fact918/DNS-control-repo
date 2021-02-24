@@ -14,5 +14,7 @@ home.franzen.fr.        IN  NS      dns.franzen.fr.
 
 ; Domain Records
 entreprise				IN CNAME	entreprise-eth1-00.mgmt.home.franzen.fr.
+kafka                   IN CNAME    kafka.svc.home.franzen.fr.
 nascar					IN CNAME	nascar.svc.home.franzen.fr.
 pi-hole					IN CNAME	pi.svc.home.franzen.fr.
+proxmox                 IN CNAME    proxmox.mgmt.home.franzen.fr
