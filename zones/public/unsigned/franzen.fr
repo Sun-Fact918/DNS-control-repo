@@ -1,6 +1,6 @@
 ;franzen.fr
 $TTL 120
-@ORIGIN franzen.fr.
+$ORIGIN franzen.fr.
 @           IN SOA dns1.franzen.fr. postmaster.franzen.fr. (
 
                 2021020901      ; Serial  - YYYYMMDDNN
