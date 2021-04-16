@@ -22,7 +22,7 @@ _adsp._domainkey.franzen.fr.    IN TXT "dkim=discardable"
 ; Domain Records
 ;; IP v4 (Host)
 cerberus         IN A           172.16.3.254
-chtuko           IN A           188.165.228.70      ; keep public IP for Hypervisor
+chtuko           IN A           188.165.228.70      ; keep public IP for Hypervisor - To kill as soon as the serer is gone
 cthuko           IN A           5.135.131.19        ; keep public IP for Hypervisor
 dns	             IN A           172.16.0.5
 dns1			 IN A			172.16.0.50
