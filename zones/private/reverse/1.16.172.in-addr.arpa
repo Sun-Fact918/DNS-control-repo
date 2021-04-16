@@ -3,7 +3,7 @@ $TTL 3600
 $ORIGIN 1.16.172.in-addr.arpa.
 @           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 
-                2021041600      ; Serial  - YYYYMMDDNN
+                2021041601      ; Serial  - YYYYMMDDNN
                 3600            ; Refresh - 1h
                 1800            ; Retry   - 30mn
                 604800          ; Expire  - 1 week
@@ -24,6 +24,6 @@ $ORIGIN 1.16.172.in-addr.arpa.
 162				            PTR	    kibana-01.int.franzen.fr.
 164                         PTR     grafana.int.franzen.fr.
 210				            PTR	    unifi.int.franzen.fr.
-250				            PTR	    pi-hole.int.franzen.fr.
+250				            PTR	    master.int.franzen.fr.
 251				            PTR	    dns.int.franzen.fr.
 254				            PTR	    vmbr2-cerberus.int.franzen.fr.

@@ -3,7 +3,7 @@ $TTL 3600
 $ORIGIN int.franzen.fr.
 @           IN SOA dns.franzen.fr. postmaster.franzen.fr. (
 
-                2021041600      ; Serial  - YYYYMMDDNN
+                2021041601      ; Serial  - YYYYMMDDNN
                 3600            ; Refresh - 1h
                 1800            ; Retry   - 30mn
                 604800          ; Expire  - 1 week
@@ -19,14 +19,15 @@ cerberus-vmbr2		IN A	172.16.1.254
 dns					IN A	172.16.1.251
 elastic-01			IN A	172.16.1.160
 elastic-02          IN A    172.16.1.161
+grafana             IN A    172.16.1.164
 index				IN A	172.16.0.10
 kafka-01            IN A    172.16.1.154
 kafka-02            IN A    172.16.1.155
 kibana-01			IN A	172.16.1.162
-grafana             IN A    172.16.1.164
 log-collector-01    IN A    172.16.1.152
 log-processor-01    IN A    172.16.1.156
 log-writer-01		IN A	172.16.1.158
+master              IN A    172.16.1.250
 pi-hole				IN A	172.16.0.250
 syslog-01			IN A	172.16.1.150
 unifi				IN A	172.16.1.210
@@ -37,6 +38,7 @@ cerberus-vmbr2		IN AAAA	2001:470:c80d:1::
 dns					IN AAAA	2001:470:c80d:1::251
 elastic-01			IN AAAA	2001:470:c80d:1::160
 elastic-02          IN AAAA	2001:470:c80d:1::161
+grafana             IN AAAA 2001:470:c80d:1::164
 index				IN AAAA	2001:470:1f13:24::10
 kafka-01            IN AAAA 2001:470:c80d:1::154
 kafka-02            IN AAAA 2001:470:c80d:1::155
@@ -44,6 +46,7 @@ kibana-01			IN AAAA 2001:470:c80d:1::162
 log-collector-01    IN AAAA 2001:470:c80d:1::152
 log-processor-01    IN AAAA 2001:470:c80d:1::156
 log-writer-01		IN AAAA 2001:470:c80d:1::158
+master              IN AAAA 2001:470:c80d:1::250
 pi-hole				IN AAAA	2001:470:1f13:24::250
 syslog-01			IN AAAA 2001:470:c80d:1::150 
 unifi				IN AAAA 2001:470:c80d:1::210
