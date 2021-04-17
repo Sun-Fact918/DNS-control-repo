@@ -3,7 +3,7 @@ $TTL 3600
 $ORIGIN franzen.fr.
 @           IN SOA dns1.franzen.fr. postmaster.franzen.fr. (
 
-                2021041700      ; Serial  - YYYYMMDDNN
+                2021041800      ; Serial  - YYYYMMDDNN
                 14400           ; Refresh - 4h
                 3600            ; Retry   - 1h
                 604800          ; Expire  - 1 week
