@@ -1,11 +1,11 @@
 ;franzen.fr
-$TTL 120
+$TTL 3600
 $ORIGIN franzen.fr.
 @           IN SOA dns1.franzen.fr. postmaster.franzen.fr. (
 
-                2021041601      ; Serial  - YYYYMMDDNN
-                3600            ; Refresh - 1h
-                1800            ; Retry   - 30mn
+                2021041700      ; Serial  - YYYYMMDDNN
+                14400           ; Refresh - 4h
+                3600            ; Retry   - 1h
                 604800          ; Expire  - 1 week
                 900 )           ; Negative Cache - 5mn
 
