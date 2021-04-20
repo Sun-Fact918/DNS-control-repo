@@ -3,7 +3,7 @@ $TTL 3600
 $ORIGIN franzen.fr.
 @           IN SOA dns1.franzen.fr. postmaster.franzen.fr. (
 
-                2021041800      ; Serial  - YYYYMMDDNN
+                2021042000      ; Serial  - YYYYMMDDNN
                 14400           ; Refresh - 4h
                 3600            ; Retry   - 1h
                 604800          ; Expire  - 1 week
@@ -25,24 +25,20 @@ _adsp._domainkey.franzen.fr.	IN TXT "dkim=discardable"
 ; Domain Records
 ;; IP v4 (Host)
 cerberus	    IN A		178.33.38.95
-chtuko          IN A        188.165.228.70
 cthuko		    IN A		5.135.131.19
 dns1            IN A        178.32.101.9
 dns2            IN A        94.23.167.148
 ika		        IN A		94.23.160.216
-matrix		    IN A		178.32.104.4
 relay		    IN A		37.59.205.231
 smtp	        IN A        178.33.249.89
 web		        IN A		188.165.79.188
 
 ;; IP v6 (Host)
 cerberus	    IN AAAA		2001:470:1f12:24::2
-chtuko		    IN AAAA		2001:41d0:2:af46::0
 ;cthuko		    IN AAAA		 TBD
 dns1            IN AAAA     2001:470:1f13:24::50
 dns2            IN AAAA     2001:470:1f13:24::51
 ika		        IN AAAA		2001:41d0:2:af46::600
-matrix		    IN AAAA		2001:41d0:2:af46::1000
 relay		    IN AAAA		2001:470:1f13:24::202
 smtp            IN AAAA     2001:470:1f13:24::60
 web		        IN AAAA		2001:470:1f13:24::20
@@ -59,10 +55,6 @@ franzen.fr.  IN MX 10  smtp.franzen.fr.
 ; Alias CNAME
 ;;; Mail
 imap		    IN CNAME	smtp
-
-;;; Matrix
-ddl             IN CNAME        matrix
-transmission    IN CNAME        matrix
 
 ;;; Missile
 autoconfig	    IN CNAME    	web
